@@ -30,13 +30,6 @@ export const getUsers = async (req, res) => {
   try {
     const users = await User.find();
 
-    if (users.length < 1) {
-      return res.status(200).json({
-        success: true,
-        message: 'No user records found!',
-      });
-    }
-
     res.status(200).json({
       success: true,
       count: users.length,
